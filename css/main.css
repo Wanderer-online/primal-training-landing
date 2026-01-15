@@ -334,6 +334,12 @@ body {
   object-fit: cover;
 }
 
+.flex-col-spaced {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .mb-20 {
   margin-bottom: 30px;
 }
@@ -392,16 +398,46 @@ body {
 .footer-info__column .h5 {
   margin-bottom: 15px;
 }
-.working-hours {
-  min-width: 270px;
+
+.opening-hours__grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  row-gap: 8px;
+  column-gap: 25px;
+  font-weight: 700;
 }
-.working-hours__content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.opening-hours__grid p:nth-child(odd) {
+  text-transform: uppercase;
+}
+.opening-hours__grid p {
+  min-width: 120px;
 }
 .footer__links {
   text-decoration: underline;
+}
+/* ################### About page ############## */
+.about-content-wrapper {
+  padding: 30px 20px;
+}
+.about-img-background-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5)),
+    url("../images/about/Reconnect-section.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+
+  min-height: 480px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+}
+.about-img-background-section__text {
+  color: var(--color-light);
+}
+.one-half {
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 50%;
 }
 
 /* ################### Media ############## */
@@ -418,6 +454,7 @@ body {
   }
   .text-heading2 {
     font-size: 22px;
+    margin-bottom: 6px;
   }
   .right-border {
     border-right: none;
@@ -514,6 +551,20 @@ body {
   header:has(.is-open) {
     background-color: var(--color-light);
   }
+
+  .about-img-background-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5)),
+      url("../images/about/Reconnect-section-mobile.jpg");
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .about-img-background-section {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5)),
+        url("../images/about/Reconnect-section-tablet.jpg");
+    }
+  }
 }
 
 /* ######## Mobile + Tablet ###### */
@@ -566,16 +617,33 @@ body {
     align-items: center;
   }
 
-  .flex-col-spaced {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
   .menu-button {
     display: none;
+  }
+
+  .about-img-background-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5)),
+      url("../images/about/Reconnect-section-tablet.jpg");
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .about-img-background-section {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5)),
+        url("../images/about/Reconnect-section.jpg");
+    }
   }
 }
 
 /* ######## Desktop ###### */
 @media screen and (min-width: 1280px) {
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .about-img-background-section {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5)),
+        url("../images/about/Reconnect-section@2x.jpg");
+    }
+  }
 }
