@@ -164,6 +164,15 @@ body {
   /* or 18px */
   letter-spacing: 0.01em;
 }
+.paragraph4 {
+  font-family: "Geist";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 131%;
+  /* identical to box height, or 25px */
+  letter-spacing: -0.03em;
+}
 
 .uppercase {
   text-transform: uppercase;
@@ -362,6 +371,9 @@ body {
 }
 
 .cta-section {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
   gap: 18px;
 
   padding: 162px 70px;
@@ -400,8 +412,9 @@ body {
 }
 
 .opening-hours__grid {
+  max-width: 270px;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr 1fr;
   row-gap: 8px;
   column-gap: 25px;
   font-weight: 700;
@@ -438,6 +451,28 @@ body {
   flex-grow: 1;
   flex-shrink: 1;
   width: 50%;
+}
+/* ################### Reserve page ############## */
+.class-type-section {
+  border-bottom: 1px solid black;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 480px;
+  padding: 30px;
+}
+
+.card__info-text {
+  display: block;
+}
+
+.card__info-text:not(:last-child) {
+  border-bottom: 1px solid black;
+  padding-bottom: 8.5px;
+  margin-bottom: 25px;
 }
 
 /* ################### Media ############## */
@@ -477,6 +512,16 @@ body {
   }
   .cta-section {
     padding: 120px 20px;
+  }
+  .card {
+    min-height: 420px;
+  }
+  .card:not(:last-child) {
+    border-bottom: 1px solid black;
+  }
+  .card__info-block {
+    margin-top: auto;
+    margin-bottom: 26px;
   }
 
   .footer {
@@ -572,8 +617,15 @@ body {
   .paragraph1 {
     font-size: 15px;
   }
+  .paragraph4 {
+    font-size: 17px;
+  }
+
   .link-wrapper {
     padding: 30px 20px;
+  }
+  .card {
+    padding: 20px;
   }
 }
 
@@ -615,6 +667,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .card:not(:last-child) {
+    border-right: 1px solid black;
   }
 
   .menu-button {
